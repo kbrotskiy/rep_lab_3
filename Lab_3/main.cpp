@@ -8,33 +8,9 @@
 
 #include <iostream>
 #include <cmath>
+#include "Class.h"
  
 using namespace std;
- 
-class vector_na_ploskosti
-{
-protected:
-    int x, y;  //координата вектора x, y
-public:
-    vector_na_ploskosti()
-    {
-    }
-    vector_na_ploskosti(int a, int b)  //конструктор для инициализации поля
-    {
-        x=a;
-        y=b;
-    }
-    virtual double dlina_vect()
-    {
-        return pow(x*x+y*y,0.5);
-    }
-    virtual void print()
-    {
-        cout << "\nkoordinata vektora x= "<< x;
-        cout <<"\nkoordinata vektora y= "<< y;
-          cout << '\n' << "Dlina vektora na ploskosti: L=" << dlina_vect();
-    }
-};
  
 int main()
 {
@@ -43,7 +19,7 @@ int main()
     cout << "Vvedite koordinatu Y: y="; cin >> y1;
     vector_na_ploskosti A(x1,y1);
     vector_na_ploskosti *pA;
-        pA=&A;
+    pA=&A;
     pA->print();
     cout<<endl;
     return 0;
