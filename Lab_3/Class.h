@@ -1,24 +1,48 @@
-class vector_na_ploskosti
+class Vect2D
 {
 protected:
-    int x, y;  //координата вектора x, y
+    int x, y;
 public:
-    vector_na_ploskosti()
+    Vect2D()
     {
     }
-    vector_na_ploskosti(int a, int b)  //конструктор для инициализации поля
+    Vect2D(int a, int b)  //конструктор для инициализации поля
     {
         x=a;
         y=b;
     }
-    virtual double dlina_vect()
+    virtual double Vdlina()
     {
         return pow(x*x+y*y,0.5);
     }
     virtual void print()
     {
-        cout << "\nkoordinata vektora x= "<< x;
+        cout << "koordinata vektora x= "<< x;
         cout <<"\nkoordinata vektora y= "<< y;
-          cout << '\n' << "Dlina vektora na ploskosti: L=" << dlina_vect();
+        cout << endl << "Dlina vektora 2D: L = " << Vdlina()<<endl;
+    }
+};
+
+class Vect3D: public Vect2D
+{
+    int z;
+public:
+    Vect3D()
+    {
+    }
+    Vect3D(int x, int y, int z):Vect2D(x ,y)
+    {
+        this->z=z;
+    }
+    double Vdlina()
+    {
+        return pow(x*x+y*y+z*z,0.5);
+    }
+    void print()
+    {
+        cout<<"koordinata vektora x="<< x;
+        cout<<endl<<"koordinata vektora y="<< y;
+        cout<<endl<<"koordinata vektora z="<< z<<endl;
+        cout <<  "Dlina vektora 3D: L = " << Vdlina()<<endl;
     }
 };
